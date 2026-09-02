@@ -29,6 +29,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - uses: actions/configure-pages@v5
+      - run: cp -R dist/client/mus244-unit1/_next dist/client/_next
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/client
