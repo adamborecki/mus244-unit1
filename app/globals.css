@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@theme inline {
+  --font-sans: 'Avenir Next', 'Trebuchet MS', sans-serif;
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font-sans); }
+.font-display { font-family: var(--font-display); }
+.eyebrow { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.signal-field { background: radial-gradient(circle at 83% 21%, rgba(235, 109, 80, 0.32), transparent 18rem), radial-gradient(circle at 12% 72%, rgba(94, 156, 144, 0.35), transparent 22rem), repeating-linear-gradient(90deg, transparent 0 27px, rgba(21, 62, 67, 0.05) 28px 29px); }
+.wave-stage { background: linear-gradient(140deg, #f7f4ea, #e8f0e3); }
+.wave-line { display: flex; align-items: center; justify-content: space-between; height: 150px; gap: 5px; }
+.wave-line span { width: 7%; min-width: 8px; height: calc(var(--wave-height) * 2); border-radius: 999px; background: linear-gradient(#eb6d50, #bb4f36); box-shadow: 0 6px 16px rgba(187, 79, 54, 0.2); }
+.wave-line span:nth-child(2n) { transform: translateY(calc(var(--wave-height) * -0.55)); }
+.wave-line span:nth-child(2n + 1) { transform: translateY(calc(var(--wave-height) * 0.55)); }
