@@ -53,7 +53,8 @@ function SlideCard({ slide, onSelect }: { slide: number; onSelect: () => void })
 }
 
 function Prism({ group, onSelect }: { group: SlideGroup; onSelect: () => void }) {
-  const [turn, setTurn] = useState(0);
+  // Rest between slide faces so a group immediately reads as a dimensional object.
+  const [turn, setTurn] = useState(0.5);
   const sides = group.slides.length * 2;
   const angle = 360 / sides;
   const radius = sides === 6 ? 345 : sides === 8 ? 490 : 250;
@@ -89,8 +90,8 @@ function Prism({ group, onSelect }: { group: SlideGroup; onSelect: () => void })
       <div className="prism-footer">
         <div><strong>{group.label}</strong><span>{group.slides.length} connected slides</span></div>
         <div className="prism-controls">
-          <button type="button" onClick={() => setTurn((value) => value + 1)} aria-label={`Rotate ${group.label} left`}><ArrowLeft aria-hidden="true" /></button>
-          <button type="button" onClick={() => setTurn((value) => value - 1)} aria-label={`Rotate ${group.label} right`}><ArrowRight aria-hidden="true" /></button>
+          <button type="button" onClick={() => setTurn((value) => value + 2)} aria-label={`Rotate ${group.label} left`}><ArrowLeft aria-hidden="true" /></button>
+          <button type="button" onClick={() => setTurn((value) => value - 2)} aria-label={`Rotate ${group.label} right`}><ArrowRight aria-hidden="true" /></button>
         </div>
       </div>
     </article>
