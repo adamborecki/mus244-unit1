@@ -23,7 +23,7 @@ const resourcesBySlide: Record<number, Resource[]> = {
     { label: 'Chrome Music Lab: Sound Waves', href: 'https://musiclab.chromeexperiments.com/Sound-Waves/' },
   ],
   15: [
-    { label: 'Sonic Visualiser: look inside recordings', href: 'https://www.sonicvisualiser.org/' },
+    { label: 'Sound Lab: What Is Sound?', href: 'https://adamborecki.github.io/sound-lab/#/station/sound-waves' },
     { label: 'Chrome Music Lab: Sound Waves', href: 'https://musiclab.chromeexperiments.com/Sound-Waves/' },
   ],
   26: [
@@ -61,6 +61,7 @@ const resourcesBySlide: Record<number, Resource[]> = {
   ],
   43: [
     { label: 'Sound Lab: Frequency', href: 'https://adamborecki.github.io/sound-lab/#/station/frequency' },
+    { label: '440 Hz: a closer listen', href: 'https://www.youtube.com/watch?v=UnhlQUBsd6g' },
     { label: 'Chrome Music Lab: Oscillators', href: 'https://musiclab.chromeexperiments.com/Oscillators/' },
   ],
   44: [
@@ -94,8 +95,18 @@ const resourcesBySlide: Record<number, Resource[]> = {
   ],
   130: [
     { label: '3Blue1Brown: Fourier transform visualized', href: 'https://www.3blue1brown.com/lessons/fourier-transforms/' },
-    { label: 'Sonic Visualiser: spectrogram reference', href: 'https://sonicvisualiser.org/doc/reference/5.0.0/en/' },
-    { label: 'Sound Lab: Waveforms', href: 'https://adamborecki.github.io/sound-lab/#/station/waveforms' },
+    { label: 'Sound Lab: FFT', href: 'https://adamborecki.github.io/sound-lab/#/station/fft' },
+    { label: 'Sound Lab: Spectrum Analyzer', href: 'https://adamborecki.github.io/sound-lab/#/station/spectrum' },
+  ],
+  161: [
+    { label: 'LA Phil: Stockhausen, Gesang der Jünglinge', href: 'https://www.laphil.com/works/gesang-der-juenglinge-song-of-the-youths' },
+    { label: 'IRCAM: how Gesang der Jünglinge was realized', href: 'https://medias.ircam.fr/en/media/xe7eafe' },
+    { label: 'Ice Ice Baby / Under Pressure sampling case', href: 'https://blogs.law.gwu.edu/mcir/case/queen-david-bowie-v-vanilla-ice/' },
+  ],
+  168: [
+    { label: 'LA Phil: Stockhausen, Gesang der Jünglinge', href: 'https://www.laphil.com/works/gesang-der-juenglinge-song-of-the-youths' },
+    { label: 'IRCAM: how Gesang der Jünglinge was realized', href: 'https://medias.ircam.fr/en/media/xe7eafe' },
+    { label: 'Ice Ice Baby / Under Pressure sampling case', href: 'https://blogs.law.gwu.edu/mcir/case/queen-david-bowie-v-vanilla-ice/' },
   ],
 };
 
@@ -104,8 +115,8 @@ const resourceRanges: Array<{ from: number; to: number; resources: Resource[] }>
     from: 1,
     to: 7,
     resources: [
-      { label: 'MUS 244 webapps', href: 'https://adamborecki.github.io/webapps/' },
-      { label: 'Sonic Visualiser: look inside recordings', href: 'https://www.sonicvisualiser.org/' },
+      { label: 'Sound Lab: What Is Sound?', href: 'https://adamborecki.github.io/sound-lab/#/station/sound-waves' },
+      { label: 'PhET: Wave on a String', href: 'https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_en.html' },
     ],
   },
   {
@@ -122,8 +133,8 @@ const resourceRanges: Array<{ from: number; to: number; resources: Resource[] }>
     to: 32,
     resources: [
       { label: 'Ableton Learning Synths: Amplitude', href: 'https://learningsynths.ableton.com/en/making-changes/amplitude' },
-      { label: 'Sound Lab: Waveforms', href: 'https://adamborecki.github.io/sound-lab/#/station/waveforms' },
-      { label: 'Sonic Visualiser: waveform and dB views', href: 'https://www.sonicvisualiser.org/screenshots.html' },
+      { label: 'Sound Lab: Amplitude', href: 'https://adamborecki.github.io/sound-lab/#/station/amplitude' },
+      { label: 'Sound Lab: Decibels', href: 'https://adamborecki.github.io/sound-lab/#/station/decibels' },
     ],
   },
   {
@@ -131,7 +142,7 @@ const resourceRanges: Array<{ from: number; to: number; resources: Resource[] }>
     to: 35,
     resources: [
       { label: 'Chrome Music Lab: Oscillators', href: 'https://musiclab.chromeexperiments.com/Oscillators/' },
-      { label: 'Sound Lab: Waveforms', href: 'https://adamborecki.github.io/sound-lab/#/station/waveforms' },
+      { label: 'Sound Lab: Periodic vs. Aperiodic', href: 'https://adamborecki.github.io/sound-lab/#/station/periodic' },
       { label: 'Try a related MUS 244 webapp', href: 'https://adamborecki.github.io/webapps/' },
     ],
   },
@@ -159,23 +170,24 @@ const resourceRanges: Array<{ from: number; to: number; resources: Resource[] }>
     resources: [
       { label: 'Chrome Music Lab: Oscillators', href: 'https://musiclab.chromeexperiments.com/Oscillators/' },
       { label: 'Ableton Learning Synths: How synths make sound', href: 'https://learningsynths.ableton.com/en/oscillators/how-synths-make-sound' },
-      { label: 'Sound Lab: Waveforms', href: 'https://adamborecki.github.io/sound-lab/#/station/waveforms' },
+      { label: 'Sound Lab: Oscillator', href: 'https://adamborecki.github.io/sound-lab/#/station/oscillator' },
+      { label: 'Sound Lab: Colors of Noise', href: 'https://adamborecki.github.io/sound-lab/#/station/colors-of-noise' },
     ],
   },
   {
     from: 72,
     to: 84,
     resources: [
-      { label: 'Mod FX: guided effect experiments', href: 'https://adamborecki.github.io/mod-fx/' },
-      { label: 'Chrome Music Lab: Oscillators', href: 'https://musiclab.chromeexperiments.com/Oscillators/' },
-      { label: 'PhET: Wave on a String', href: 'https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_en.html' },
+      { label: 'Sound Lab: Phase', href: 'https://adamborecki.github.io/sound-lab/#/station/phase' },
+      { label: 'Sound Lab: Polarity', href: 'https://adamborecki.github.io/sound-lab/#/station/polarity' },
+      { label: 'Sound Lab: Constructive Interference', href: 'https://adamborecki.github.io/sound-lab/#/station/constructive-interference' },
     ],
   },
   {
     from: 85,
     to: 106,
     resources: [
-      { label: 'Harmonic Series Builder', href: 'https://adamborecki.github.io/harmonic-series-builder-gen3/' },
+      { label: 'Sound Lab: Beating Patterns', href: 'https://adamborecki.github.io/sound-lab/#/station/beating' },
       { label: 'Steve Reich: Piano Phase', href: 'https://www.youtube.com/watch?v=7P_9hDzG1i0' },
       { label: 'Mod FX: guided effect experiments', href: 'https://adamborecki.github.io/mod-fx/' },
     ],
@@ -202,20 +214,23 @@ const resourceRanges: Array<{ from: number; to: number; resources: Resource[] }>
     from: 127,
     to: 130,
     resources: [
-      { label: 'Sonic Visualiser: audio analysis', href: 'https://www.sonicvisualiser.org/' },
-      { label: 'Sonic Visualiser: spectrogram reference', href: 'https://sonicvisualiser.org/doc/reference/5.0.0/en/' },
-      { label: 'Sound Lab: Waveforms', href: 'https://adamborecki.github.io/sound-lab/#/station/waveforms' },
+      { label: 'Sound Lab: Spectrum Analyzer', href: 'https://adamborecki.github.io/sound-lab/#/station/spectrum' },
+      { label: 'Sound Lab: Spectrogram', href: 'https://adamborecki.github.io/sound-lab/#/station/spectrogram' },
+      { label: 'Sound Lab: FFT', href: 'https://adamborecki.github.io/sound-lab/#/station/fft' },
     ],
   },
 ];
 
-const laterSlideResources: Resource[] = [
-  { label: 'MUS 244 webapps', href: 'https://adamborecki.github.io/webapps/' },
-  { label: 'Unit 1 review', href: 'https://adamborecki.github.io/mus244-unit1-review/' },
-];
+const slidesWithoutExplore = new Set([
+  1, 2, 3, 5, 7, 24, 25, 48, 49, 50, 51, 52, 53, 56, 70, 71, 81, 82, 83, 84, 85, 86, 106, 107, 126,
+]);
 
 function resourcesForSlide(slide: number) {
-  return resourcesBySlide[slide] ?? resourceRanges.find((range) => slide >= range.from && slide <= range.to)?.resources ?? laterSlideResources;
+  return resourcesBySlide[slide] ?? resourceRanges.find((range) => slide >= range.from && slide <= range.to)?.resources ?? [];
+}
+
+function canExplore(slide: number) {
+  return Boolean(resourcesForSlide(slide).length) && !slidesWithoutExplore.has(slide);
 }
 
 export default function Home() {
@@ -231,13 +246,14 @@ export default function Home() {
         {Array.from({ length: totalSlides }, (_, index) => {
           const slide = index + 1;
           const isOpen = openSlide === slide;
+          const hasExplore = canExplore(slide);
           return (
             <article className={`slide-entry${isOpen ? ' is-open' : ''}`} key={slide}>
-              <button className="slide-card" type="button" onClick={() => setOpenSlide(isOpen ? null : slide)} aria-expanded={isOpen} aria-controls={`explore-${slide}`}>
+              <button className="slide-card" type="button" onClick={() => hasExplore && setOpenSlide(isOpen ? null : slide)} aria-expanded={hasExplore && isOpen} aria-controls={hasExplore ? `explore-${slide}` : undefined} disabled={!hasExplore}>
                 <img src={`slides/slide-${slide}.png`} alt={`Slide ${slide}`} loading={slide > 3 ? 'lazy' : 'eager'} />
                 <span>Slide {slide}</span>
               </button>
-              {isOpen && (
+              {hasExplore && isOpen && (
                 <div className="explore-panel" id={`explore-${slide}`}>
                   <div><Compass aria-hidden="true" /><p>Explore more</p></div>
                   <div className="resource-list">
