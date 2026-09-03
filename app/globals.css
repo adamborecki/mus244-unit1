@@ -1,54 +1,52 @@
 @import 'tailwindcss';
 
-@theme inline {
-  --font-sans: 'Avenir Next', 'Trebuchet MS', sans-serif;
-}
+@theme inline { --font-sans: 'Avenir Next', 'Trebuchet MS', sans-serif; }
 
-:root { color: #1b2427; background: #eef0eb; }
+:root { color: #182528; background: #e8ebe4; }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 body { margin: 0; font-family: var(--font-sans); }
 button, a { font: inherit; }
 button { cursor: pointer; }
 
-.site-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(31, 55, 58, 0.045) 1px, transparent 1px), linear-gradient(rgba(31, 55, 58, 0.045) 1px, transparent 1px), #eef0eb; background-size: 24px 24px; }
-.site-header { display: flex; align-items: baseline; justify-content: space-between; max-width: 1440px; margin: 0 auto; padding: 24px clamp(20px, 4vw, 64px); }
-.site-name { color: inherit; font-size: 0.9rem; font-weight: 800; letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; }
-.site-header p, .slide-count, .slides-heading p, .layers-key, .resource-list > p { margin: 0; color: #5a6567; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.site-shell { min-height: 100vh; background: radial-gradient(circle at 80% 8%, rgba(197, 80, 46, 0.13), transparent 28rem), linear-gradient(90deg, rgba(26, 52, 55, 0.045) 1px, transparent 1px), linear-gradient(rgba(26, 52, 55, 0.045) 1px, transparent 1px), #e8ebe4; background-size: auto, 25px 25px, 25px 25px; }
+.site-header { display: flex; align-items: center; justify-content: space-between; max-width: 1440px; margin: 0 auto; padding: 24px clamp(20px, 4vw, 64px); }
+.site-header p, .details-count, .resource-list > p, .prism-kicker { margin: 0; font-size: 0.73rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
+.site-header span { color: #58686a; font-size: 0.85rem; }
+.site-header > svg { width: 25px; height: 25px; color: #ab432b; }
 
-.selected-area { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(230px, 0.65fr); gap: clamp(24px, 4vw, 64px); align-items: center; max-width: 1440px; margin: 0 auto; padding: clamp(12px, 2vw, 28px) clamp(20px, 4vw, 64px) clamp(52px, 8vw, 104px); }
-.selected-slide-frame { position: relative; z-index: 2; overflow: hidden; border: 1px solid rgba(26, 36, 39, 0.22); background: #fff; box-shadow: 0 28px 50px rgba(19, 38, 40, 0.2); }
-.selected-slide-frame img { display: block; width: 100%; height: auto; }
-.slide-stack { position: absolute; width: min(53vw, 760px); aspect-ratio: 16 / 9; }
-.slide-stack span { position: absolute; inset: 8px -10px -8px 10px; border: 1px solid rgba(26, 36, 39, 0.14); background: #c4cbc1; transform: rotate(1.1deg); }
-.slide-stack span:last-child { inset: 15px -17px -15px 17px; background: #dde0d8; transform: rotate(2.25deg); }
-.selected-info { position: relative; z-index: 3; max-width: 410px; }
-.selected-info h1 { margin: 9px 0 26px; font-size: clamp(2rem, 4vw, 4.5rem); line-height: 0.95; letter-spacing: -0.055em; }
-.quiet-note { max-width: 27rem; margin: 26px 0; color: #4e5c5e; font-size: 1.05rem; line-height: 1.55; }
-.resource-list { display: grid; gap: 9px; }
-.resource-list a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 13px 0; border-bottom: 1px solid rgba(26, 36, 39, 0.22); color: #113e43; font-size: 0.98rem; font-weight: 750; text-decoration: none; }
-.resource-list a:hover { color: #a94025; }
+.course-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, 0.36fr); gap: clamp(32px, 5vw, 88px); align-items: start; max-width: 1440px; margin: 0 auto; padding: 16px clamp(20px, 4vw, 64px) 100px; }
+.slide-stream { display: grid; gap: clamp(22px, 3.5vw, 50px); min-width: 0; }
+.slide-card { position: relative; display: block; width: 100%; padding: 0; overflow: hidden; border: 1px solid rgba(24, 37, 40, 0.18); background: white; box-shadow: 0 16px 25px rgba(16, 38, 41, 0.11); text-align: left; transition: transform 180ms ease, box-shadow 180ms ease; }
+.slide-card:hover { transform: translateY(-3px) rotate(-0.2deg); box-shadow: 0 23px 35px rgba(16, 38, 41, 0.18); }
+.slide-card img { display: block; width: 100%; height: auto; }
+.slide-card span { position: absolute; right: 10px; bottom: 10px; padding: 4px 7px; background: rgba(20, 32, 35, 0.78); color: white; font-size: 0.75rem; font-weight: 800; }
+
+.details-panel { position: sticky; top: 24px; min-height: 240px; padding: 20px 0; }
+.details-count, .resource-list > p { color: #6a7778; }
+.details-panel h1 { margin: 8px 0 16px; font-size: clamp(2.5rem, 4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.065em; }
+.details-copy { max-width: 27rem; color: #435759; font-size: 1rem; line-height: 1.62; }
+.resource-list { display: grid; gap: 8px; margin-top: 32px; }
+.resource-list a { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid rgba(24, 37, 40, 0.23); color: #10444a; font-size: 0.95rem; font-weight: 750; text-decoration: none; }
+.resource-list a:hover { color: #ac422a; }
 .resource-list svg { flex: none; width: 17px; height: 17px; }
-.slide-controls { display: flex; gap: 8px; margin-top: 28px; }
-.slide-controls button { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(26, 36, 39, 0.28); border-radius: 50%; background: #f9faf6; color: #1b2427; }
-.slide-controls button:hover:not(:disabled) { background: #113e43; color: #fff; }
-.slide-controls button:disabled { cursor: default; opacity: 0.3; }
 
-.slides-section { max-width: 1440px; margin: 0 auto; padding: 32px clamp(20px, 4vw, 64px) 80px; border-top: 1px solid rgba(26, 36, 39, 0.18); background: rgba(255, 255, 252, 0.52); }
-.slides-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 26px; }
-.slides-heading > div { display: grid; gap: 5px; }
-.slides-heading > div span { color: #536164; font-size: 0.95rem; }
-.layers-key { display: flex; align-items: center; gap: 6px; }
-.layers-key svg { width: 16px; height: 16px; color: #b54528; }
-.slides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: clamp(14px, 1.7vw, 24px); align-items: start; }
-.slide-tile { position: relative; display: block; width: 100%; padding: 0; overflow: hidden; border: 1px solid rgba(26, 36, 39, 0.18); background: #fff; box-shadow: 0 5px 12px rgba(19, 38, 40, 0.09); text-align: left; transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease; }
-.slide-tile img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
-.slide-tile:hover { z-index: 1; transform: translateY(-5px) rotate(-0.35deg); box-shadow: 0 15px 24px rgba(19, 38, 40, 0.18); }
-.slide-tile.is-selected { z-index: 2; transform: scale(1.055); border: 3px solid #b54528; box-shadow: 0 18px 28px rgba(135, 48, 28, 0.24); }
-.slide-tile.has-group::after { position: absolute; inset: 0; border: 2px solid rgba(181, 69, 40, 0.65); content: ''; pointer-events: none; }
-.tile-number { position: absolute; right: 7px; bottom: 7px; min-width: 23px; padding: 3px 6px; background: rgba(20, 30, 32, 0.78); color: #fff; font-size: 0.7rem; font-weight: 800; text-align: center; }
-.group-dot { position: absolute; top: 7px; left: 7px; display: grid; width: 25px; height: 25px; place-items: center; background: #b54528; color: white; }
-.group-dot svg { width: 15px; height: 15px; }
+.prism-section { padding: 8px 0 0; overflow: hidden; }
+.prism-kicker { display: flex; align-items: center; gap: 8px; color: #ab432b; }
+.prism-kicker svg { width: 16px; height: 16px; }
+.prism-window { position: relative; height: clamp(270px, 35vw, 470px); margin-top: 16px; perspective: 1600px; perspective-origin: 50% 43%; }
+.prism { position: absolute; top: 47%; left: 50%; width: min(78vw, 650px); height: auto; aspect-ratio: 16 / 9; transform: translate(-50%, -50%) rotateX(-5deg) rotateY(var(--rotation)); transform-style: preserve-3d; transition: transform 850ms cubic-bezier(.2, .75, .2, 1); }
+.prism-face { position: absolute; inset: 0; display: grid; width: 100%; height: 100%; padding: 0; overflow: hidden; border: 1px solid rgba(15, 29, 31, 0.34); backface-visibility: hidden; background: #fff; transform-style: preserve-3d; }
+.prism-face img { width: 100%; height: 100%; object-fit: cover; }
+.prism-material-face { place-items: center; background: linear-gradient(145deg, #9d3e2a, #e29a5b); color: rgba(255, 255, 255, 0.95); }
+.prism-material-face span { font-size: clamp(1.2rem, 2vw, 2.4rem); font-weight: 800; letter-spacing: -0.04em; transform: translateZ(2px); }
+.prism-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 2px 0; border-top: 1px solid rgba(24, 37, 40, 0.18); }
+.prism-footer div:first-child { display: grid; gap: 2px; }
+.prism-footer strong { font-size: 1.1rem; }
+.prism-footer span { color: #5b6b6d; font-size: 0.85rem; }
+.prism-controls { display: flex; gap: 7px; }
+.prism-controls button { display: grid; width: 39px; height: 39px; place-items: center; border: 1px solid rgba(24, 37, 40, 0.28); border-radius: 50%; background: rgba(255, 255, 255, 0.74); color: #173e43; }
+.prism-controls button:hover { border-color: #173e43; background: #173e43; color: white; }
+.prism-controls svg { width: 18px; height: 18px; }
 
-@media (max-width: 760px) { .selected-area { grid-template-columns: 1fr; padding-bottom: 50px; } .slide-stack { width: calc(100% - 40px); } .selected-info { max-width: none; } .selected-info h1 { margin-bottom: 18px; } .slides-grid { grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 14px; } }
-@media (max-width: 420px) { .site-header { padding-top: 17px; } .site-header p { display: none; } .slides-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .course-layout { grid-template-columns: 1fr; } .details-panel { position: relative; top: auto; order: -1; min-height: 0; padding: 6px 0 20px; } .details-panel h1 { margin-bottom: 10px; } .details-copy { margin: 0; } .resource-list { margin-top: 19px; } .prism { width: min(86vw, 640px); } }
+@media (max-width: 520px) { .site-header { padding-top: 17px; } .course-layout { padding-top: 4px; } .prism-window { height: 240px; margin-top: 10px; } .prism { width: 84vw; } .prism-footer { padding-top: 10px; } }
