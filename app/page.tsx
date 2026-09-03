@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { ArrowUpRight, Compass } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowUpRight, Compass, Sparkles } from 'lucide-react';
 
 type Resource = { label: string; href: string };
 
@@ -233,6 +233,47 @@ function canExplore(slide: number) {
   return Boolean(resourcesForSlide(slide).length) && !slidesWithoutExplore.has(slide);
 }
 
+function SlideEntry({ slide, isOpen, onToggle }: { slide: number; isOpen: boolean; onToggle: () => void }) {
+  const entryRef = useRef<HTMLElement>(null);
+  const [isNear, setIsNear] = useState(slide === 1);
+  const hasExplore = canExplore(slide);
+
+  useEffect(() => {
+    const entry = entryRef.current;
+    if (!entry) return;
+
+    const observer = new IntersectionObserver(
+      ([entryState]) => setIsNear(entryState.isIntersecting),
+      { rootMargin: '-22% 0px -22% 0px', threshold: 0 },
+    );
+
+    observer.observe(entry);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <article className={`slide-entry${isOpen ? ' is-open' : ''}${isNear ? ' is-near' : ''}${hasExplore ? ' has-explore' : ''}`} key={slide} ref={entryRef}>
+      <button className="slide-card" type="button" onClick={onToggle} aria-expanded={hasExplore && isOpen} aria-controls={hasExplore ? `explore-${slide}` : undefined} disabled={!hasExplore}>
+        <img src={`slides/slide-${slide}.png`} alt={`Slide ${slide}`} loading={slide > 3 ? 'lazy' : 'eager'} />
+        <span className="slide-number">Slide {slide}</span>
+        {hasExplore && <span className="explore-chip"><Sparkles aria-hidden="true" /> Explore more</span>}
+      </button>
+      {hasExplore && isOpen && (
+        <div className="explore-panel" id={`explore-${slide}`}>
+          <div><Compass aria-hidden="true" /><p>Explore more</p></div>
+          <div className="resource-list">
+            {resourcesForSlide(slide).map((resource) => (
+              <a key={resource.href} href={resource.href} target="_blank" rel="noreferrer">
+                {resource.label}<ArrowUpRight aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </article>
+  );
+}
+
 export default function Home() {
   const [openSlide, setOpenSlide] = useState<number | null>(null);
 
@@ -247,26 +288,7 @@ export default function Home() {
           const slide = index + 1;
           const isOpen = openSlide === slide;
           const hasExplore = canExplore(slide);
-          return (
-            <article className={`slide-entry${isOpen ? ' is-open' : ''}`} key={slide}>
-              <button className="slide-card" type="button" onClick={() => hasExplore && setOpenSlide(isOpen ? null : slide)} aria-expanded={hasExplore && isOpen} aria-controls={hasExplore ? `explore-${slide}` : undefined} disabled={!hasExplore}>
-                <img src={`slides/slide-${slide}.png`} alt={`Slide ${slide}`} loading={slide > 3 ? 'lazy' : 'eager'} />
-                <span>Slide {slide}</span>
-              </button>
-              {hasExplore && isOpen && (
-                <div className="explore-panel" id={`explore-${slide}`}>
-                  <div><Compass aria-hidden="true" /><p>Explore more</p></div>
-                  <div className="resource-list">
-                    {resourcesForSlide(slide).map((resource) => (
-                      <a key={resource.href} href={resource.href} target="_blank" rel="noreferrer">
-                        {resource.label}<ArrowUpRight aria-hidden="true" />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </article>
-          );
+          return <SlideEntry key={slide} slide={slide} isOpen={isOpen} onToggle={() => hasExplore && setOpenSlide(isOpen ? null : slide)} />;
         })}
       </section>
     </main>
