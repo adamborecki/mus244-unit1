@@ -79,7 +79,7 @@ export default function Home() {
           <span />
         </div>
         <div className="selected-slide-frame">
-          <img src={`/slides/slide-${selectedSlide}.png`} alt={`Slide ${selectedSlide}`} />
+          <img src={`slides/slide-${selectedSlide}.png`} alt={`Slide ${selectedSlide}`} />
         </div>
         <aside className="selected-info">
           <p className="slide-count">Slide {selectedSlide} of {totalSlides}</p>
@@ -130,7 +130,7 @@ export default function Home() {
                 onClick={() => selectSlide(slide)}
                 aria-label={`Select slide ${slide}${group ? `, ${group.label} group` : ''}`}
               >
-                <img src={`/slides/slide-${slide}.png`} alt="" loading={slide > 12 ? 'lazy' : 'eager'} />
+                <img src={`slides/slide-${slide}.png`} alt="" loading={slide > 12 ? 'lazy' : 'eager'} />
                 <span className="tile-number">{slide}</span>
                 {group && <span className="group-dot" title={`${group.label} group`}><Layers3 aria-hidden="true" /></span>}
               </button>
