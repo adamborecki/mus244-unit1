@@ -283,6 +283,9 @@ export default function Home() {
         <p>MUS 244 / Unit 1</p>
         <span>{totalSlides} slides</span>
       </header>
+      <p className="bonus-note">
+        🎁 This is bonus content — I took the slides and vibe-coded them into this interactive thing. Questions? Let me know!
+      </p>
       <section className="slide-stream" aria-label="MUS 244 Unit 1 slides">
         {Array.from({ length: totalSlides }, (_, index) => {
           const slide = index + 1;
