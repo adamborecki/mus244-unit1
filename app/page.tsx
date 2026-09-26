@@ -281,10 +281,16 @@ export default function Home() {
     <main className="site-shell">
       <header className="site-header">
         <p>MUS 244 / Unit 1</p>
-        <span>{totalSlides} slides</span>
+        <div className="site-header-links">
+          <a href="https://adamborecki.github.io/mus244-unit1-review/">Unit 1 Review ↗</a>
+          <span>{totalSlides} slides</span>
+        </div>
       </header>
       <p className="bonus-note">
         🎁 This is bonus content — I took the slides and vibe-coded them into this interactive thing. Questions? Let me know!
+      </p>
+      <p className="ai-disclosure">
+        🤖 AI use disclosure: built and maintained with Claude (an AI coding assistant), under my direction.
       </p>
       <section className="slide-stream" aria-label="MUS 244 Unit 1 slides">
         {Array.from({ length: totalSlides }, (_, index) => {

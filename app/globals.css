@@ -12,7 +12,11 @@ button { cursor: pointer; }
 .site-header { display: flex; align-items: baseline; justify-content: space-between; max-width: 1060px; margin: 0 auto; padding: 26px clamp(18px, 4vw, 58px); }
 .site-header p { margin: 0; font-size: 0.78rem; font-weight: 850; letter-spacing: 0.105em; text-transform: uppercase; }
 .site-header span { color: #5a6b6d; font-size: 0.85rem; }
-.bonus-note { max-width: 1060px; margin: -8px auto 22px; padding: 0 clamp(18px, 4vw, 58px); color: #5a6b6d; font-size: 0.85rem; }
+.site-header-links { display: flex; align-items: baseline; gap: 14px; }
+.site-header-links a { color: #15464c; font-size: 0.85rem; font-weight: 800; text-decoration: none; border-bottom: 1px solid rgba(21, 70, 76, 0.35); }
+.site-header-links a:hover { color: #a9432c; border-color: rgba(169, 67, 44, 0.4); }
+.bonus-note { max-width: 1060px; margin: -8px auto 4px; padding: 0 clamp(18px, 4vw, 58px); color: #5a6b6d; font-size: 0.85rem; }
+.ai-disclosure { max-width: 1060px; margin: 0 auto 22px; padding: 0 clamp(18px, 4vw, 58px); color: #5a6b6d; font-size: 0.78rem; font-style: italic; }
 .slide-stream { display: grid; gap: clamp(22px, 3.5vw, 46px); width: min(100% - 36px, 900px); margin: 0 auto; }
 .slide-entry { display: grid; gap: 0; opacity: 0.58; transform: scale(0.93); transform-origin: center center; transition: opacity 380ms ease, transform 520ms cubic-bezier(.2, .75, .2, 1); }
 .slide-entry.is-near { position: relative; z-index: 1; opacity: 1; transform: scale(1); }
